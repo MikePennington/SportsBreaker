@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.breaker.newsstory">
+    <class name="StoryBean" table="news_stories">
+        <id name="storyId" column="id">
+            <generator class="native" />
+        </id>
+        <property name="title" column="title" />
+        <property name="description" column="description" />
+        <property name="brokenDate" column="broken_date" />
+        <property name="url" column="url" />
+
+<!--     
+		<set name="teams" table="news_story_teams">
+        	<key column="news_story_id"/>
+        	<many-to-many column="team_id" class="com.breaker.team.TeamBean"/>
+    	</set>
+-->
+    	
+<!--
+		<set name="categories" table="news_story_categories">
+        	<key column="news_story_id"/>
+        	<many-to-many column="category_id" class="com.breaker.newsstory.CategoryBean"/>
+    	</set>
+-->
+		
+		<many-to-one name="brokenByUser" column="broken_by" class="com.breaker.user.User" lazy="false" />
+
+    </class>
+</hibernate-mapping>

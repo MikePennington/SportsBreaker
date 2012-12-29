@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.breaker.rss">
+	<class name="Channel">
+	
+		<id name="channelId" column="channel_id">
+			<generator class="native"/>
+		</id>
+		<property name="link" column="link"/>
+		<property name="title" column="title"/>
+		<property name="description" column="description"/>
+		<property name="webpageLink" column="webpage_link"/>
+		<property name="language" column="language"/>
+		<property name="copyright" column="copyright"/>
+		<property name="active" column="active"/>
+		<property name="categoryId" column="category_id"/>
+		<property name="teamId" column="team_id"/>
+
+		<set name="items" table="rss_channel_items">
+        	<key column="channel_id"/>
+        	<many-to-many column="item_id" class="com.breaker.rss.Item"/>
+    	</set>
+	
+	</class>
+</hibernate-mapping>

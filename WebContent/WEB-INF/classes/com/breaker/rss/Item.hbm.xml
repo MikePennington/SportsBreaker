@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.breaker.rss">
+	<class name="Item">
+
+		<id name="itemId" column="item_id">
+			<generator class="native"/>
+		</id>
+		<property name="guid" column="guid"/>
+		<property name="title" column="title"/>
+		<property name="link" column="link"/>
+		<property name="description" column="description"/>
+		<property name="lastUpdated" column="last_updated"/>
+		<property name="publishedDate" column="published_date"/>
+		<property name="storyId" column="story_id"/>
+
+	</class>
+</hibernate-mapping>

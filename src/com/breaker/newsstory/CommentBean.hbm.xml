@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.breaker.newsstory">
+	<class name="CommentBean" table="comments">
+	
+		<id name="commentId" column="comment_id">
+			<generator class="native"/>
+		</id>
+		<property name="storyId" column="story_id"/>
+		<property name="userId" column="user_Id"/>
+		<property name="replyToId" column="reply_to_id"/>
+		<property name="commentDate" column="comment_date"/>
+		<property name="comment" column="comment"/>
+		<many-to-one name="user" column="user_id" class="com.breaker.user.User" insert="false" update="false"/>
+
+	</class>
+</hibernate-mapping>

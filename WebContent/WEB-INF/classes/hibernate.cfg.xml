@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory name="session_factory">
+        <!--<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">bre4ker1</property>
+        <property name="hibernate.connection.url">jdbc:mysql://sportsbreaker.com:3306/brkbrk1_prod</property>
+        <property name="hibernate.connection.username">brkbrk1_brkbrk1</property>-->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+		<!-- Connection pooling properties -->
+        <property name="hibernate.connection.provider_class">com.breaker.db.DBManager</property>
+        
+        <!-- Mappings -->
+        <mapping resource="com/breaker/db/objects/PrivateBeta.hbm.xml"/>
+        <mapping resource="com/breaker/newsstory/CategoryBean.hbm.xml"/>
+		<mapping resource="com/breaker/newsstory/CommentBean.hbm.xml"/>
+		<mapping resource="com/breaker/newsstory/StoryBean.hbm.xml"/>
+		<mapping resource="com/breaker/team/TeamBean.hbm.xml"/>
+		<mapping resource="com/breaker/team/TeamTabBean.hbm.xml"/>
+		<mapping resource="com/breaker/rss/Channel.hbm.xml"/>
+		<mapping resource="com/breaker/rss/Item.hbm.xml"/>
+		<mapping resource="com/breaker/user/User.hbm.xml"/>
+		
+
+    </session-factory>
+</hibernate-configuration>

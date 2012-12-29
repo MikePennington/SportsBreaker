@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.breaker.user">
+	<class name="User" table="users">
+
+		<id name="userId" column="user_id">
+			<generator class="increment"/>
+		</id>
+		<property name="email" column="email"/>
+		<property name="encryptedPassword" column="password"/>
+		<property name="userName" column="username"/>
+		<property name="creationDate" column="creation_date"/>
+		
+		<property name="hometown" column="hometown"/>
+		<property name="location" column="current_location"/>
+		<property name="college" column="college"/>
+		<property name="highSchool" column="high_school"/>
+		<property name="pictureFileName" column="picture_file_name"/>
+		<property name="realName" column="real_name"/>
+		<property name="gender" column="gender"/>
+		<property name="zipCode" column="zip_code"/>
+		<property name="newsletter" column="newsletter"/>
+		<property name="birthday" column="birthday"/>
+
+	</class>
+</hibernate-mapping>
